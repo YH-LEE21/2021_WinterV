@@ -8,15 +8,33 @@
 </head>
 <body>
 <%
+	int currentPos = 0;
 	int diceNum = 0;
 	int diceTwo = 0;
-	diceNum = (int)(Math.random()*6)+1;
-	diceTwo = (int)(Math.random()*6)+1;
+	if(request.getParameter("currentPos")==null){
+		currentPos = 1;
+		System.out.println(currentPos);
+	}else{
+		int prePos = Integer.parseInt(request.getParameter("currentPos"));
+		diceNum = (int)(Math.random()*6)+1;
+		diceTwo = (int)(Math.random()*6)+1;
+		System.out.println(prePos);
+		currentPos = prePos + diceNum + diceTwo;
+	}
+	if(currentPos > 50){
+		currentPos += diceNum+diceTwo-50;
+	}
 %>
+	<form method="post" action="dice.jsp">
+	<div>
+		현재 위치 : <input type = "text" name="currentPos" value="<%=currentPos%>" readonly="readonly">
+	</div>
 	<div>주사위의 합 : <%=diceNum+diceTwo %></div>
 	<div>
 		<img alt="주사위" src= "<%=diceNum %>.jpg" width="200px" height="200px">
 		<img alt="주사위" src= "<%=diceTwo %>.jpg" width="200px" height="200px">
 	</div>
+	<button type="submit">주사위 play</button>
+	</form>
 </body>
 </html>
