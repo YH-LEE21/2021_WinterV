@@ -28,7 +28,7 @@
 	<form method="post" action="dice.jsp">
 	<div>
 		현재 위치 : <input type = "text" name="currentPos" value="<%=currentPos%>" readonly="readonly">
-	</div>
+	</div> 
 	<div>주사위의 합 : <%=diceNum+diceTwo %></div>
 	<div>
 		<img alt="주사위" src= "<%=diceNum %>.jpg" width="200px" height="200px">
