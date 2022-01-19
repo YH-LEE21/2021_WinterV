@@ -9,8 +9,8 @@
 <body>
 <%
 	int currentPos = 0;
-	int diceNum = 0;
-	int diceTwo = 0;
+	int diceNum = 7;
+	int diceTwo = 7;
 	if(request.getParameter("currentPos")==null){
 		currentPos = 1;
 		System.out.println(currentPos);
