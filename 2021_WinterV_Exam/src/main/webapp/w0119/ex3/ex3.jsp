@@ -12,7 +12,7 @@
 	int y = 100;
 	int temp = x;// x값을 백업
 	x = y; // x = 100
-	y = temp; // y = 100
+	y = temp; // y = 10
 %>
 	<div>x : <%=x %></div>
 	<div>y : <%=y %></div>
