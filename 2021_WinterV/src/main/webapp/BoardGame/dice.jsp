@@ -22,7 +22,7 @@
 		currentPos = prePos + diceNum + diceTwo;
 	}
 	if(currentPos > 50){
-		currentPos -= 50;
+		currentPos -= 50; 
 	}
 %>
 	<form method="post" action="dice.jsp">
