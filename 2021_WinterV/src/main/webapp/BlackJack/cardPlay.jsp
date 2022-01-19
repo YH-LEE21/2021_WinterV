@@ -7,5 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<img alt="카드 뒷면" src="./card/cardback.png">
+	<form method="post" action="cardPlayAction.jsp">
+		<button type="submit">play</button>
+	</form>
 </body>
 </html>
