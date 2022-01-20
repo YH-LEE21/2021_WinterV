@@ -83,6 +83,7 @@
 	if((dealerTotal > 21 && userTotal > 21) || (dealerTotal == userTotal)){
 		//draw
 %>
+
 		<div>비겼다!!</div>
 <%	
 	}else if(userTotal < 22 && userTotal > dealerTotal || userTotal<22 && dealerTotal>21){
