@@ -38,6 +38,10 @@
 			<td><%=board.no %></td>
 		</tr>
 		<tr>
+			<td>name</td>
+			<td><%=board.name %></td>
+		</tr>
+		<tr>
 			<td>memo</td>
 			<td><%=board.memo %></td>
 		</tr>

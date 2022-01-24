@@ -5,4 +5,5 @@ public class Person {
 	public String name;
 	public String memo;
 	public String createdate;
+	public String pw;
 }

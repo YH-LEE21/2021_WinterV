@@ -75,7 +75,7 @@
 	<table	border="1" class="table table-hover">
 		<thead>
 			<tr>
-				<th>no</th><th>title</th><th>category</th><th>createDate</th>
+				<th>no</th><th>name</th><th>memo</th><th>createDate</th>
 			</tr>
 		</thead>
 		<tbody>
