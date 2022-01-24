@@ -15,7 +15,6 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	//1) mariadb 장치를 사용 가능하도록 드라이버 로딩
-	Class.forName("org.mariadb.jdbc.Driver");
 	//DriverManager.getConnection() 입력값으로 인증된 db연결이면 Connection객체를 만들어 리턴
 	
 	//2) mariadb에 접속

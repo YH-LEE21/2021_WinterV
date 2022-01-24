@@ -46,5 +46,9 @@
 			<td><%=board.createdate %></td>
 		</tr>
 	</table>
+	<div>
+		<a href="p_updateBoardForm.jsp?no=<%=board.no%>">수정</a>
+		<a href="p_deleteBoardForm.jsp?no=<%=board.no%>">삭제</a>
+	</div>
 </body>
 </html>
