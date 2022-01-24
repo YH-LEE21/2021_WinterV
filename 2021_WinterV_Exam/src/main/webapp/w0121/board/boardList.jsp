@@ -13,6 +13,7 @@
 </head>
 <body  class="container">
 <%
+	request.setCharacterEncoding("UTF-8");
 	//1) mariadb 장치를 사용 가능하도록 드라이버 로딩
 	Class.forName("org.mariadb.jdbc.Driver");
 	//DriverManager.getConnection() 입력값으로 인증된 db연결이면 Connection객체를 만들어 리턴
@@ -21,18 +22,33 @@
 	BoardMain bm = new BoardMain();
 	
 	bm.pstmt = null;
+	
+	//category search
 	String category = request.getParameter("category");
-	if(category !=null){
-		bm.pstmt = bm.con.prepareStatement("select no,title,category,createdate from board where category = ? order by createdate desc limit 10");
-		bm.pstmt.setString(1, category);
+	String search = request.getParameter("search");
+	//category debug O
+	System.out.println(category+"<---category");
+	//search debug O
+	System.out.println(search+"<---search");
+	if(search != null){
+		bm.pstmt = bm.con.prepareStatement("select no,title,category,createdate from board where category LIKE ? order by createdate desc limit 10");
+		String writeSearch = "%"+search+"%";
+		bm.pstmt.setString(1,writeSearch);
+		category = null;
 	}
 	else{
-		bm.pstmt = bm.con.prepareStatement("select no,title,category,createdate from board order by createdate desc limit 10");
+		if(category !=null ){
+			bm.pstmt = bm.con.prepareStatement("select no,title,category,createdate from board where category = ? order by createdate desc limit 10");
+			bm.pstmt.setString(1, category);
+		}
+		else{
+			bm.pstmt = bm.con.prepareStatement("select no,title,category,createdate from board order by createdate desc limit 10");
+		}
+		search = null;
 	}
 	
+	System.out.println(bm.pstmt);
 	bm.rs = bm.pstmt.executeQuery();
-	
-	
 	ArrayList<Board> list = new ArrayList<Board>();
 	
 	while(bm.rs.next()){
@@ -63,7 +79,10 @@
 
 	<h1>board list</h1>
 	<!-- 카테고리별 리스트 메뉴 -->
-	
+	<form method="post" action="boardList.jsp">
+		<input type="text" name ="search" placeholder="title insert">
+		<button type="submit">검색</button>
+	</form>
 	<div>
 	<% 
 		for(String s : categoryList) {
@@ -91,5 +110,6 @@
 			%>
 		</tbody>
 	</table>
+	<a href="insertBoardForm.jsp" class ="btn btn-secondary" >글쓰기</a>
 </body>
 </html>
