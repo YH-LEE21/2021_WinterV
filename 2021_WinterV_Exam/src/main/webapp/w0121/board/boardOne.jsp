@@ -7,8 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 </head>
-<body>
+<body class="container">
 <%
 	Class.forName("org.mariadb.jdbc.Driver");
 	int no = Integer.parseInt(request.getParameter("no"));
@@ -32,7 +34,7 @@
 %>
 
 	<h1>게시글 상세보기</h1>
-	<table border="1">
+	<table border="1" class="table table-hover">
 		<tr>
 			<td>no</td>
 			<td><%=board.no %></td>
