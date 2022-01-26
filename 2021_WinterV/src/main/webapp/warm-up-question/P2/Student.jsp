@@ -25,6 +25,10 @@
 	}
 %>
 	<h1>학생 목록</h1>
+	
+	<div>
+		<a href="./diary.jsp">다이어리</a>
+	</div>
 	<div>
 		<a href="./insertStudentForm.jsp">학생 추가</a>
 	</div>
