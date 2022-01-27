@@ -12,7 +12,7 @@
 	Calendar calendar = Calendar.getInstance();
 	System.out.println(calendar);
 	int y = calendar.get(Calendar.YEAR);
-	int m = calendar.get(Calendar.MONTH)+1;
+	int m = calendar.get(Calendar.MONTH);
 	int d = calendar.get(Calendar.DAY_OF_MONTH);
 	calendar.set(y,m,1);
 	
@@ -32,7 +32,7 @@
 	<div align="center">
 		<h2><%=y%>년 <%=m+1%>월</h2>
 	</div>
-	<table border="1" width="100%">
+	<table  width="100%">
 		<tr>
 			<th class = "Sunday" style="color: red;">일</th>
 			<th class = "Monday">월</th>
